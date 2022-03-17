@@ -72,3 +72,7 @@ button:hover {
 button:active {
 	background: hsl(235, 85.6%, 80%);
 }
+
+#ts-R {
+	text-transform: capitalize;
+}
