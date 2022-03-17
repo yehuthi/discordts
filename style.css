@@ -35,6 +35,7 @@ body {
 
 #output button {
 	cursor: pointer;
+	color: black;
 }
 
 #output .group button {
