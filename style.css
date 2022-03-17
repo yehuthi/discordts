@@ -1,0 +1,71 @@
+html {
+	background: #36393f;
+	color: #dcddde;
+	font-family: Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.5em;
+}
+
+#dateInput {
+	font-size: 1.25em;
+	background: #202225;
+	border: 1px solid black;
+	border-radius: 3px;
+	color: inherit;
+	font-family: inherit;
+	text-align: center;
+}
+
+#output {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.25em;
+}
+
+#output .group {
+	display: inline-flex;
+	--button-border-radius: 3px;
+}
+
+#output button {
+	cursor: pointer;
+}
+
+#output .group button {
+	border: 1px solid;
+	border-left: 0;
+	background: none;
+}
+
+#output .group > button:first-child {
+	border-left: 1px solid black;
+}
+
+#output .group > :first-child {
+	border-start-start-radius: var(--button-border-radius);
+	border-end-start-radius: var(--button-border-radius);
+}
+
+#output .group > :last-child {
+	border-end-end-radius: var(--button-border-radius);
+	border-start-end-radius: var(--button-border-radius);
+}
+
+#output .group {
+	background: hsl(235, 85.6%, 64.7%);
+	border-radius: var(--button-border-radius);
+}
+
+#output .group button:hover {
+	background: hsl(235, 85.6%, 72%);
+}
+
+#output .group button:active {
+	background: hsl(235, 85.6%, 80%);
+}
