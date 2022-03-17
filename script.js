@@ -20,12 +20,11 @@ function updateView() {
 
 	tst.textContent = date.toLocaleTimeString(previewLocale, {
 		timeStyle: "short",
+		hour12: false,
 	});
 	tst.onclick = epochCopyFlag("t");
 
-	tsT.textContent = date.toLocaleTimeString(previewLocale, {
-		timeStyle: "medium",
-	});
+	tsT.textContent = `:${date.getSeconds().toString().padStart(2, "0")}`;
 	tsT.onclick = epochCopyFlag("T");
 
 	tsd.textContent = date.toLocaleDateString(previewLocale, {
