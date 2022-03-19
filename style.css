@@ -88,3 +88,7 @@ button:active,
 #ts-f {
 	border-style: dashed;
 }
+
+#output .row {
+	width: 100%;
+}
