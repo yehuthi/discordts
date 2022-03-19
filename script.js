@@ -16,6 +16,7 @@ function updateView() {
 
 	const epochCopyFlag = flag => () => {
 		navigator.clipboard.writeText(`<t:${epoch}:${flag}>`);
+		gtag("event", "copy_output", { date, flag });
 	};
 
 	tst.textContent = date.toLocaleTimeString(previewLocale, {
@@ -51,7 +52,10 @@ function updateView() {
 		hour: "numeric",
 		minute: "numeric",
 	});
-	tsf.onclick = () => navigator.clipboard.writeText(`<t:${epoch}>`);
+	tsf.onclick = () => {
+		navigator.clipboard.writeText(`<t:${epoch}>`);
+		gtag("event", "copy_output", { date, flag: "f" });
+	};
 
 	timeago.cancel(tsR);
 	tsR.setAttribute("datetime", date.toISOString());
