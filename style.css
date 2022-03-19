@@ -70,13 +70,21 @@ button {
 button {
 	background: hsl(235, 85.6%, 64.7%);
 }
-button:hover {
+.buttonHover,
+button:hover,
+#ts-F:hover + #ts-f {
 	background: hsl(235, 85.6%, 72%);
 }
-button:active {
+.buttonActive,
+button:active,
+#ts-F:active + #ts-f {
 	background: hsl(235, 85.6%, 80%);
 }
 
 #ts-R {
 	text-transform: capitalize;
+}
+
+#ts-f {
+	border-style: dashed;
 }

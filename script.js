@@ -64,6 +64,26 @@ function init() {
 	dateInput.valueAsNumber = now.valueOf() + now.getTimezoneOffset() * -60000;
 	dateInput.oninput = updateView;
 	updateView();
+
+	// Make the time + seconds button also highlight the time without seconds
+	// to suggest it will semantically include it.
+	// Note: The datetime button group does this via CSS.
+	tsT.onmouseenter = () => {
+		tst.classList.add("buttonHover");
+	};
+	tsT.onmouseleave = () => {
+		tst.classList.remove("buttonHover");
+	};
+	tsT.onmousedown = () => {
+		tst.classList.add("buttonActive");
+		window.addEventListener(
+			"mouseup",
+			() => {
+				tst.classList.remove("buttonActive");
+			},
+			{ once: true }
+		);
+	};
 }
 
 init();
