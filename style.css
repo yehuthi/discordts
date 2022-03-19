@@ -21,6 +21,7 @@ body {
 }
 
 #dateInput {
+	width: min(100%, 40ch);
 	font-size: 1.25em;
 	background: #202225;
 	border: 1px solid black;
