@@ -51,7 +51,7 @@ function updateView() {
 		hour: "numeric",
 		minute: "numeric",
 	});
-	tsf.onclick = navigator.clipboard.writeText(`<t:${epoch}>`);
+	tsf.onclick = () => navigator.clipboard.writeText(`<t:${epoch}>`);
 
 	timeago.cancel(tsR);
 	tsR.setAttribute("datetime", date.toISOString());
