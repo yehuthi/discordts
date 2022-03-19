@@ -22,6 +22,10 @@ body {
 	gap: 0.5em;
 }
 
+h1 {
+	font-size: 2em;
+}
+
 #dateInput {
 	width: min(100%, 40ch);
 	font-size: 1.25em;
