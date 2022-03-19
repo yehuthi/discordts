@@ -5,11 +5,13 @@
 	font-size: 100%;
 	font: inherit;
 	vertical-align: middle;
+	accent-color: red;
 }
 
 html {
 	background: #36393f;
-	color: #dcddde;
+	--discord-text: #dcddde;
+	color: var(--discord-text);
 	font-family: Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
@@ -24,8 +26,9 @@ body {
 	width: min(100%, 40ch);
 	font-size: 1.25em;
 	background: #202225;
-	border: 1px solid black;
+	color: var(--discord-text);
 	border-radius: 3px;
+	padding: 8px;
 	color: inherit;
 	font-family: inherit;
 	text-align: center;
@@ -47,7 +50,7 @@ button {
 	cursor: pointer;
 	padding: 0.2em;
 	border-radius: 3px;
-	color: #000; /* Safari Fix */
+	color: #fff;
 }
 
 .group > button {
@@ -92,4 +95,8 @@ button:active,
 
 #output .row {
 	width: 100%;
+}
+
+#output img {
+	filter: invert();
 }
