@@ -39,6 +39,11 @@ function updateView() {
 	});
 	tsD.onclick = epochCopyFlag("D");
 
+	tsF.textContent = date.toLocaleString(previewLocale, {
+		weekday: "long",
+	});
+	tsF.onclick = epochCopyFlag("F");
+
 	tsf.textContent = date.toLocaleString(previewLocale, {
 		month: "long",
 		day: "numeric",
@@ -47,16 +52,6 @@ function updateView() {
 		minute: "numeric",
 	});
 	tsf.onclick = navigator.clipboard.writeText(`<t:${epoch}>`);
-
-	tsF.textContent = date.toLocaleString(previewLocale, {
-		weekday: "long",
-		month: "long",
-		day: "numeric",
-		year: "numeric",
-		hour: "numeric",
-		minute: "numeric",
-	});
-	tsF.onclick = epochCopyFlag("F");
 
 	timeago.cancel(tsR);
 	tsR.setAttribute("datetime", date.toISOString());
