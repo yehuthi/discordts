@@ -46,7 +46,6 @@ class ToastElement extends HTMLElement {
 	}
 
 	attributeChangedCallback(attr, _old_value, value) {
-		console.log({attr,value}, Boolean(value));
 		if (attr == ToastElement.ATTR_VISIBLE) {
 			if (value !== null) {
 				this.animate([
