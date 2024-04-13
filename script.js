@@ -87,7 +87,9 @@ function updateView() {
 
 function init() {
 	const now = new Date();
-	dateInput.valueAsNumber = now.valueOf() + now.getTimezoneOffset() * -60000;
+	dateInput.valueAsNumber = (now.getTimezoneOffset() * -60000) +
+		// round away the milliseconds so they don't show up in the date <input> control
+		(((now.valueOf() / 1000) | 0) * 1000); 
 	dateInput.oninput = updateView;
 	updateView();
 
