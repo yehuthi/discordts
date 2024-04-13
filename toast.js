@@ -41,7 +41,7 @@ class ToastElement extends HTMLElement {
 		root.appendChild(ToastElement._template.content.cloneNode(true));
 		const button_close = /** @type {HTMLButtonElement} */ (root.getElementById('button_close'));
 		button_close.addEventListener('click', () => this.removeAttribute(ToastElement.ATTR_VISIBLE))
-		this.style.opacity = 0;
+		this.style.opacity = "0";
 		this.style.transform = 'translateY(100%)';
 	}
 
