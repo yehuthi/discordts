@@ -14,8 +14,17 @@ function updateView() {
 	const date = new Date(dateInput.value);
 	const epoch = (date / 1000) | 0;
 
+	const clipboard_copy = (string) => {
+		try {
+			navigator.clipboard.writeText(string);
+		} catch (e) {
+			console.error("navigator.clipboard.writeText failed", e);
+			alert(`failed to copy (${string}): ${e.message}`);
+		}
+	}
+
 	const epochCopyFlag = (flag, type) => () => {
-		navigator.clipboard.writeText(`<t:${epoch}:${flag}>`);
+		clipboard_copy(`<t:${epoch}:${flag}>`);
 		gtag("event", "copy_output", { date, type });
 	};
 
@@ -53,7 +62,7 @@ function updateView() {
 		minute: "numeric",
 	});
 	tsf.onclick = () => {
-		navigator.clipboard.writeText(`<t:${epoch}>`);
+		clipboard_copy(`<t:${epoch}>`);
 		gtag("event", "copy_output", { date, type: "Datetime (Short)" });
 	};
 
