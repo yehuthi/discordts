@@ -8,18 +8,26 @@ const tsD = document.getElementById("ts-D");
 const tsf = document.getElementById("ts-f");
 const tsF = document.getElementById("ts-F");
 const tsR = document.getElementById("ts-R");
+const toast = document.getElementById('toast');
 
 function updateView() {
 	// Reference: https://discord.com/developers/docs/reference#message-formatting-timestamp-styles
 	const date = new Date(dateInput.value);
 	const epoch = (date / 1000) | 0;
 
-	const clipboard_copy = (string) => {
+	/**
+	 * @param {string} string 
+	 */
+	const clipboard_copy = async (string) => {
 		try {
-			navigator.clipboard.writeText(string);
+			await navigator.clipboard.writeText(string);
+			toast.setAttribute(ToastElement.ATTR_VISIBLE, '');
+			toast.textContent = 'Copied';
+			setTimeout(() => toast.removeAttribute(ToastElement.ATTR_VISIBLE), 3000)
 		} catch (e) {
 			console.error("navigator.clipboard.writeText failed", e);
-			alert(`failed to copy (${string}): ${e.message}`);
+			toast.setAttribute(ToastElement.ATTR_VISIBLE, '');
+			toast.innerHTML = `Failed to copy:<code id="toast_code">${string.replaceAll('<', '&lt;').replaceAll('>', '&gt;')}</code>`;
 		}
 	}
 

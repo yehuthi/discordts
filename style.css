@@ -39,6 +39,15 @@ h1 {
 	text-align: center;
 }
 
+code {
+	font-family: monospace;
+	font-size: 1rem;
+}
+
+#toast_code {
+	margin-inline: 1rem;
+}
+
 #output {
 	display: flex;
 	flex-direction: column;
